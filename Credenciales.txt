@@ -1,0 +1,54 @@
+ Profesores: 
+Nombre de Usuario: AgustinPerez
+Contraseña:Azul2432
+
+Nombre de Usuario: lele
+Contraseña: Ti2145   
+
+Nombre de Usuario: LuciaR
+Contraseña: Lu12345
+
+--------------------------------------------------------------------------
+Alumnos
+
+
+Nivel Inicial
+
+
+Nombre de Usuario: Fabian
+Contraseña: Fabi4567
+
+Nombre de Usuario: Renzo
+Contraseña: Renzosilva1
+
+Nombre de Usuario: Saul
+Contraseña: Sa6789
+
+
+Nivel Intermedio
+
+
+Nombre de Usuario: Enzo
+Contraseña: Enzo2112
+
+Nombre de Usuario: Maxi
+Contraseña: Max1234
+
+Nombre de Usuario: Augusto
+Contraseña: Asd1234
+
+
+Nivel Avanzado
+
+
+Nombre de Usuario: Martin2156
+Contraseña: Martin2156
+
+Nombre de Usuario: Ana
+Contraseña: Ana12
+
+Nombre de Usuario: Bruno
+Contraseña: Bat2020
+
+----------------------------------------------------------------------------
+

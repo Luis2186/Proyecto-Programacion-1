@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <link rel="icon" href="data:,">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title> Obligatorio </title>
+</head>
+
+<body>
+    <div id="cabecera" style="display: inline-block;">
+        <img src="Imagen/Captura.JPG" alt="" id="logo" style="display:inline-flex ;">
+        <div class="titulo" style="display: inline-flex; vertical-align: middle;">
+            <h5 style="margin: 0; height: 30%;">3NOTAS Escuela de Música</h5>
+        </div>
+    </div>
+    <div id="menu" clas>
+
+        <!-- Ambos Perfiles  -->
+        <input type="button" id="btnRegistro" value="Registro" style="display: block;" class="btninterfaz">
+        <input type="button" id="btnLogin" value="Login" style="display: block;" class="btninterfaz">
+        <input type="button" id="btnusuario" value="Perfil del Usuario" style="display: block;" class="btninterfaz">
+
+        <!-- Profesor  -->
+        <input type="button" id="btnAsignacionDeNivel" value="Asignacion de Nivel" style="display: block;"
+            class="btninterfaz">
+        <input type="button" id="btnPlanteamientoEjercicios" value="Planteamiento de Ejercicios" style="display: block;"
+            class="btninterfaz">
+        <input type="button" id="btnDevolucionDeEjercicios" value="Devolucion de Ejercicios" style="display: block;"
+            class="btninterfaz">
+        <input type="button" id="btnEstadisticaProfesor" value="Estadistica" style="display: block;"
+            class="btninterfaz">
+
+        <!-- Alumno  -->
+        <input type="button" id="btnVisualizacionEjercicios" value="Visualizacion de Ejercicios" style="display: block;"
+            class="btninterfaz">
+        <input type="button" id="btnVisualizacionEjerciciosResueltos" value="Ejercicios Resueltos"
+            style="display: block;" class="btninterfaz">
+        <input type="button" id="btnEntregaEjercicios" value="Entrega de Ejercicios" style="display: block;"
+            class="btninterfaz">
+        <input type="button" id="btnEstadisticaAlumno" value="Estadistica" style="display: block;" class="btninterfaz">
+
+
+        <input type="button" id="btnCerrarSesion" value="Cerrar Sesion" style="display: block;" class="btninterfaz">
+    </div>
+
+
+    <!-- Ambos Perfiles  -->
+
+    <div id="bienvenida" class="interfaz" style="display: block">
+        <!--- // TODO.se agrega mensaje bienvenida --->
+        <br> <br>
+        <h2>Bienvenido a 3NOTAS Escuela de Música.</h2>
+    </div>
+
+    <div id="perfilUsuario" class="interfaz" style="display: block;">
+ 
+        <div id="datosUsuario" style="display: block;"></div>
+         <div id="imgPerfilusuario"></div>
+      </div>
+    <div id="resgitroLog" class="interfaz">
+        <div id="registro" style="display: inline-block;">
+            <div id="registroExitoso" style="display:block">
+                <h1><em> Registro <em> </h1>
+                <label for="tipoDeUsuario">Tipo de usuario: </label>
+                <select id="tipoDeUsuario" onchange="controlartTipoUsuario()" class="inputText">
+                    <option value="Docente">Docente</option>
+                    <option value="Alumno" id="alumno">Alumno</option>
+                </select><br><br>
+                <div id="registroAlumno" class="interfaz" style="display: none;"></div><br>
+
+                <label for="nombre" class="txtlabel"> Nombre: </label>
+                <input type="text" id="nombre" class="inputText" required /> <br><br>
+                <label for="usuario" class="txtlabel"> Nombre de usuario:</label>
+                <input type="text" id="usuario" class="inputText" required /> <br><br>
+                <label for="contraseña" class="txtlabel"> Contraseña: </label>
+                <input type="password" id="contraseña" class="inputText" required /><br><br>
+                <div class="errores" id="erroresRegistro" style="display: block"> </div><br>
+                <input type="button" id="btnIngresarRegistro" value="Registrarme" class="btnUsuarios"><br><br>
+
+            </div>
+
+         </div>
+
+        <div id="login" style="display: inline-block;">
+
+            <h1><em> Login <em> </h1>
+            <br>
+            <label for="logusuario" class="txtlabel"> Nombre de usuario:</label>
+            <input type="text" id="logusuario" class="inputText" required /> <br><br>
+            <label for="logcontraseña" class="txtlabel"> Contraseña: </label>
+            <input type="password" id="logcontraseña" class="inputText" required /><br><br>
+            <input type="button" id="btnIniciarSesion" value="Iniciar sesión" class="btnUsuarios"><br><br>
+            <div class="errores" id="erroresLogin"></div> <br>
+
+        </div>
+    </div>
+    <!-- Profesor  -->
+
+    <div id="asignacionDeNivel" class="interfaz" style="display: block;">
+        <h1 class="titulosVentana"> Asignacion de nivel </h1>
+        <br>
+        <div id="selectNiveles">
+            <div id="resultadoBusqueda"> </div><br>
+
+
+            <div id="alumnoAsignado"> </div>
+            <br>
+            <input type="button" id="btnUsuarioNivel" value="Asignar Nivel" class="btnUsuarios">
+        </div>
+    </div>
+
+    <div id="planteamientoEjercicios" class="interfaz" style="display: block;">
+        <div id="visualizarIngresoEjercicios" style="display: block;">
+            <h1><em> Planteamiento de ejercicios <em> </h1>
+
+            <form>Dificultad del ejercicio:
+                <select id="nivelEjercicio" class="inputTextEj">
+                    <option value="">Seleccione el nivel... </option>
+                    <option value="Inicial">Inicial </option>
+                    <option value="Intermedio">Intermedio </option>
+                    <option value="Avanzado">Avanzado </option>
+                </select><br><br>
+            </form>
+
+            <label for="titulo">Título del ejercicio: </label>
+            <input type="text" id="titulo" class="inputTextEj"> <br><br>
+            <label for="imgEjercicio">Buscar imagen</label>
+            <input type="file" id="imgEjercicio">
+            <p>Descripción del ejercicio: <br><br> <textarea rows="10" cols="70" id="descripcion"> </textarea> </p>
+            <input type="button" id="plantearejercicio" value="Ingresar" class="btnUsuarioEj">
+            <br><br>        
+            <div id="msjsIngresoEj" class="errores" > </div><br> <br>
+             <input type="button" value="Ver Ejercicios Planteados" id="btnVerEjPlanteados" class="btnUsuarioEj">
+             <br> <br>
+       
+       </div>
+                 <br>
+                <div id="mostrarEjerciciosPlanteados" style="display: none;" >
+                    <br>
+                            <input type="button" value="Plantear Ejercicio" id="btnPlenteamientoEj" class="btnUsuarioEj"> 
+                                <br>
+                            <div id="mostrarTabla"></div>
+                
+                </div>
+    </div>
+
+
+    <div id="devolucionEjercicios" class="interfaz" style="display: block;">
+        <h1><em> Devolucion de ejercicios <em> </h1>
+        <div id="selectTareas"> </div>
+        <div id="textDevolucion" style="display: block;">
+             Devolucion: <br><br> <textarea rows="10" cols="70" id="devolucionTarea"> </textarea>
+        </div>
+        <br> 
+        <div id="devExitosa" >  </div>
+        <br>
+        <input type="button" id="btndevolucionejercicio" value="Ingresar" style="display: block;">
+    </div>
+
+    <div id="estadistica" class="interfaz" style="display: block;">
+
+        <h1><em> Estadistica Profesor <em> </h1>
+        <div id="mayorCantidadEjercicios">Alumno/os que ha/han resuelto mas ejericicos: </div>
+        <div id="totalEjercicios">Cantidad de ejercicios entregados: </div>
+        <br>
+        <br>
+        <div id="selectAlumnoEstadistica"></div>
+        <div id="mostrarAlumnoNivel"> </div>
+
+        <input type="button" id="btnLimpiarEstadistica" value="Limpiar Pantalla">
+    </div>
+
+    <!-- Alumno  -->
+
+    <div id="visualizacionEjercicios" class="interfaz" style="display: block;">
+
+        <h1><em> Visualizacion de ejercicios (Alumno) <em> </h1>
+        <p> Aca se visualizan todos los ejercicios planteados por el docente que le corresponde</p>
+        <label for="buscarejercicios"> Titulo/Descripcion: </label>
+        <input type="text" id="buscarejercicios" class="inputText">
+        <input type="button" id="buscar" value="Buscar" class="btnUsuarios">
+        <input type="button" id="btnLimpiarBusqueda" value="Limpiar Busqueda" class="btnUsuarios"><br><br><br>
+        <div id="mostrarEjerciciosAlumnos"> </div> <br><br>
+        <input type="button" value="Ver todos los ejercicios" id="btnVertodos" class="btnUsuarios">
+        <br><br><br>
+        <div id="todosLosEjerciciosDelAlumno"></div>
+
+
+    </div>
+
+    <div id="entregaEjercicios" class="interfaz" style="display: block;">
+        <h1><em> Entrega de Ejercicios <em> </h1>
+        <br> <br>
+        <div class="tareas" id="selectTareasPendientesAlumno"> </div>
+        <br>
+
+        <div id="entregarTarea" class="interfaz" style="display: block;">
+            <br>
+            <label for="audioTarea"> Cargar Audio </label>
+            <input type="file" id="audioTarea" class="inputText"><br><br> <br>
+            <input type="button" id="btnEntregaTarea" value="Entregar Tarea" class="btnUsuarios">
+        </div>
+        <br>
+    
+        <div id="msjTareas" style="display: none;">
+         
+        </div>
+
+    </div>
+
+    <div id="visualizacionEjerciciosResueltos" class="interfaz" style="display: block;">
+        <h1><em> Ejercicios Resueltos <em> </h1>
+        <div id="mostrarEjResueltos"> </div>
+    </div>
+
+    <div id="estadisticaAlumno" class="interfaz" style="display: block;">
+        <h1> Estadistica </h1>
+        <div id="mostrarEstadisticaAlumno">
+
+        </div>
+    </div>
+
+
+    <!-- Hojas js  -->
+
+    <script type="text/javascript" src="js/Variables Globales y Clases.js"></script>
+    <script type="text/javascript" src="js/basesDeDatos.js"></script>
+    <script type="text/javascript" src="js/Funciones de Usuarios.js"></script>
+    <script type="text/javascript" src="js/Registro y login.js"></script>
+    <script type="text/javascript" src="js/Apoyo y Validaciones.js"></script>
+    <script type="text/javascript" src="js/Interfaz y dinamica.js"></script>
+
+</body>
+
+</html>
